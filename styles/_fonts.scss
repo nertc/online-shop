@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Myra';
+    src: url('../assets/fonts/Myra4FCaps-Bold.ttf');
+}
+
+$myra: 'Myra', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+@mixin font( $name: $roboto, $weight: $regular, $size: 0px, $color: $font-color-dim ) {
+    @if $name == $myra {
+        $weight: $bold;
+    }
+    font-family: $name;
+    font-weight: $weight;
+    @if $size != 0px {
+        font-size: $size;
+    }
+}

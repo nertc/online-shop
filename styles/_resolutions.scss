@@ -1,0 +1,41 @@
+// Desktop Medias
+
+@mixin media-desktop {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}
+
+@mixin media-small {
+    @media screen and (min-width: 1025px) and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin media-medium {
+    @media screen and (min-width: 1201px) and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin media-large {
+    @media screen and (min-width: 1601px) {
+        @content;
+    }
+}
+
+// Tablet Medias
+
+@mixin media-tablet {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+// Mobile Medias
+
+@mixin media-tablet {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
