@@ -1,0 +1,26 @@
+a {
+    @include font(95%, $regular);
+    letter-spacing: 0.04em;
+}
+
+nav {
+    width: 100%;
+}
+
+ul {
+    width: 595px;
+}
+
+li {
+    padding: 15px 0;
+}
+
+li.selected {
+    border-top: 3px solid $primary-color;
+    @function shadow() {
+        @return inset 0 8px 5px -10px #000000;
+    }
+    -moz-box-shadow: shadow();
+    -webkit-box-shadow: shadow();
+    box-shadow: shadow();
+}

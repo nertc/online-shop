@@ -11,7 +11,7 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 
-@mixin font( $name: $roboto, $weight: $regular, $size: 0px, $color: $font-color-dim ) {
+@mixin font( $size: 0px, $weight: $regular, $name: $roboto, $color: $font-color-dim ) {
     @if $name == $myra {
         $weight: $bold;
     }
@@ -20,4 +20,5 @@ $bold: 700;
     @if $size != 0px {
         font-size: $size;
     }
+    color: $color;
 }

@@ -10,11 +10,12 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button, button:focus {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
+  outline: none;
   font: inherit;
   vertical-align: baseline;
 }
@@ -47,6 +48,10 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: "Myra";
   src: url("../assets/fonts/Myra4FCaps-Bold.ttf");
@@ -54,11 +59,11 @@ table {
 * {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  color: #595959;
   position: relative;
   box-sizing: border-box;
   scroll-behavior: smooth;
   background-position: center center;
-  transition: all 1s;
 }
 
 html, body {
@@ -67,7 +72,6 @@ html, body {
 }
 
 .component, header, footer {
-  grid-column: 2/3;
   width: 100%;
   height: auto;
 }
@@ -102,6 +106,92 @@ html, body {
 
 .fr {
   float: right;
+}
+
+@media screen and (min-width: 1025px) {
+  header a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 95%;
+    color: #595959;
+    letter-spacing: 0.04em;
+  }
+  header nav {
+    width: 100%;
+  }
+  header ul {
+    width: 595px;
+  }
+  header li {
+    padding: 15px 0;
+  }
+  header li.selected {
+    border-top: 3px solid #e94544;
+    -moz-box-shadow: inset 0 8px 5px -10px #000000;
+    -webkit-box-shadow: inset 0 8px 5px -10px #000000;
+    box-shadow: inset 0 8px 5px -10px #000000;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #home {
+    padding: 0 50px;
+  }
+  #home .bg {
+    width: 100%;
+    height: 750px;
+    background-image: linear-gradient(45deg, rgba(233, 69, 68, 0.9), rgba(233, 69, 68, 0.4)), url("../assets/images/home/bg2.jpg");
+    filter: brightness(60%);
+    background-position-y: top;
+    background-size: cover;
+  }
+  #home article {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 5px));
+    text-align: center;
+  }
+  #home h1 {
+    font-family: "Myra", sans-serif;
+    font-weight: 700;
+    font-size: 650%;
+    color: #fefefe;
+    letter-spacing: 0.0275em;
+    margin-bottom: 20px;
+  }
+  #home p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #595959;
+    color: #fefefe;
+    letter-spacing: 0.035em;
+    word-spacing: 0.2em;
+    margin-bottom: 80px;
+  }
+  #home button {
+    width: 200px;
+    height: 45px;
+    background-color: #00f6ff;
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 95%;
+    color: #595959;
+    padding-bottom: 6px;
+  }
+  #home button:after {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: -20%;
+    left: -2%;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: 3px solid #595959;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

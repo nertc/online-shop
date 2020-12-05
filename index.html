@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jiji's Book Service | All The Books You Want</title>
+    <title>Jiji's Book Service | All Of The Books You Want</title>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,20 +14,29 @@
     <link rel="stylesheet" href="./build/style.css">
 </head>
 
+<!-- LOGIN AND LOGO -->
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#home"></a></li>
-                <li><a href="#catalog"></a></li>
-                <li><a href="#personal"></a></li>
-                <li><a href="#new"></a></li>
-                <li><a href="#registration"></a></li>
+            <ul class="flex center-self">
+                <li class="selected"><a href="#home">HOME</a></li>
+                <li><a href="#catalog">CATALOG</a></li>
+                <li><a href="#personal">PERSONAL</a></li>
+                <li><a href="#new">NEW</a></li>
+                <li><a href="#registration">REGISTRATION</a></li>
+                <li><a href="#">ADD BOOK</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="component" id="home"></div>
+        <div class="component" id="home">
+            <div class="bg"></div>
+            <article>
+                <h1>Jiji's Book Service</h1>
+                <p>ALL OF THE BOOKS YOU WANT</p>
+                <button>REGISTRATION</button>
+            </article>
+        </div>
         <div class="component" id="catalog"></div>
         <div class="component" id="personal"></div>
         <div class="component" id="new"></div>

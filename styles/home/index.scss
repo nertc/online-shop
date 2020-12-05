@@ -1,0 +1,5 @@
+#home{
+    @include media-desktop {
+        @import './desktop';
+    }
+}

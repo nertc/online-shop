@@ -1,4 +1,8 @@
-$primary-color: #e94544;
+@function primary-color ($transparency: 1) {
+    @return rgba(233, 69, 68, $transparency);
+}
+
+$primary-color: primary-color();
 $secondary-color: #00f6ff;
 
 $font-color-dark: #272727;
