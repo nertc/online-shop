@@ -1,0 +1,14 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    border: none;
+    background-color: none;
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-color;
+}
