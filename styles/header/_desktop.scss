@@ -1,3 +1,7 @@
+&{
+    background-color: $bg-color;
+}
+
 a {
     @include font(95%, $regular);
     letter-spacing: 0.04em;

@@ -1,0 +1,85 @@
+&{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr minmax(1000px, 1600px) 1fr;
+    background-color: $bg-color;
+    top: 49px;
+}
+
+.form {
+    padding: 20px 0px;
+    grid-column: 2/3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input, .dropbtn {
+    outline: none;
+    vertical-align: bottom;
+    @include font(1em);
+    box-shadow: inset 0px -3px 8px -10px black;
+    background-color: $font-color-light;
+    border: none;
+    border-bottom: solid 3px $primary-color;
+    height: 30px;
+}
+input, .dropbtn, .dropdown-content p {
+    padding: 5px;
+}
+
+input, .dropdown {
+    width: 15%;
+}
+
+.dropdown * {
+    width: 100%;
+}
+
+.dropbtn, .dropdown-content p {
+    cursor: pointer;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: flex-end;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $font-color-light;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+.dropdown-content p {
+    color: black;
+    display: block;
+}
+
+.dropdown-content p:hover {
+    background-color: $primary-color;
+    color: $font-color-light;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+button {
+    background-color: $primary-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+button * {
+    color: $font-color-light;
+}

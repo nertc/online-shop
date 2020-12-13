@@ -12,11 +12,11 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="./build/style.css">
+    <link rel="stylesheet" href="./assets/styles/font-awesome.min.css">
 </head>
 
-<!-- LOGIN AND LOGO -->
 <body>
-    <header>
+    <header class="sticky">
         <nav>
             <ul class="flex center-self">
                 <li class="selected"><a href="#home">HOME</a></li>
@@ -28,7 +28,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <!-- <main> -->
         <div class="component" id="home">
             <div class="bg"></div>
             <article>
@@ -37,12 +37,42 @@
                 <button>REGISTRATION</button>
             </article>
         </div>
-        <div class="component" id="catalog"></div>
-        <div class="component" id="personal"></div>
-        <div class="component" id="new"></div>
-        <div class="component" id="registration"></div>
-    </main>
-    <footer>
+        <div class="component sticky" id="categories">
+            <div class="form">
+                <input type="text" name="name" id="nameId">
+                <input type="text" name="author" id="authorId">
+                <input type="text" pattern="\d*" name="datefrom" id="dateFromId">
+                <input type="text" pattern="\d*" name="dateto" id="dateToId">
+                <div class="dropdown">
+                    <div class="dropbtn">Genre</div>
+                    <div class="dropdown-content">
+                        <p value="none">No Filter</p>
+                        <p value="adventure">Adventure</p>
+                        <p value="classics">Classics</p>
+                        <p value="comics">Comics</p>
+                        <p value="detective">Detective</p>
+                        <p value="fantasy">Fantasy</p>
+                        <p value="horror">Horror</p>
+                        <p value="romance">Romance</p>
+                        <p value="scifi">Sci-Fi</p>
+                        <p value="short">Short Stories</p>
+                        <p value="thriller">Thriller</p>
+                    </div>
+                </div>
+                <button onclick=""><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="component" id="books">
+            <div class="book">
+                <div class="border"></div>
+                <h2>Book Name</h2>
+                <p>by Book Author</p>
+                <img src="" alt="">
+                <p>$Price</p>
+            </div>
+        </div>
+    <!-- </main> -->
+    <footer style="height: 1000px; background-color: red;">
     </footer>
 </body>
 

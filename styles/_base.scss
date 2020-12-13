@@ -11,14 +11,16 @@
     // transition: all 1s;
 }
 
+button {
+    cursor: pointer;
+}
+
 html, body {
     min-width: 320px;
-    overflow-x: hidden;
 }
 
 .component, header, footer {
     width: 100%;
-    height: auto;
 }
 
 .grid {
@@ -51,4 +53,11 @@ html, body {
 
 .fr {
     float: right;
+}
+
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    z-index: 2;
+    top: 0;
 }

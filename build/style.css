@@ -16,7 +16,6 @@ time, mark, audio, video, button, button:focus {
   border: 0;
   font-size: 100%;
   outline: none;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -66,14 +65,16 @@ a {
   background-position: center center;
 }
 
+button {
+  cursor: pointer;
+}
+
 html, body {
   min-width: 320px;
-  overflow-x: hidden;
 }
 
 .component, header, footer {
   width: 100%;
-  height: auto;
 }
 
 .grid {
@@ -108,7 +109,18 @@ html, body {
   float: right;
 }
 
+.sticky {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
 @media screen and (min-width: 1025px) {
+  header {
+    background-color: #fff;
+  }
   header a {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -191,6 +203,84 @@ html, body {
     height: 100%;
     border-radius: 30px;
     border: 3px solid #595959;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #categories {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr minmax(1000px, 1600px) 1fr;
+    background-color: #fff;
+    top: 49px;
+  }
+  #categories .form {
+    padding: 20px 0px;
+    grid-column: 2/3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #categories input, #categories .dropbtn {
+    outline: none;
+    vertical-align: bottom;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: #595959;
+    box-shadow: inset 0px -3px 8px -10px black;
+    background-color: #fefefe;
+    border: none;
+    border-bottom: solid 3px #e94544;
+    height: 30px;
+  }
+  #categories input, #categories .dropbtn, #categories .dropdown-content p {
+    padding: 5px;
+  }
+  #categories input, #categories .dropdown {
+    width: 15%;
+  }
+  #categories .dropdown * {
+    width: 100%;
+  }
+  #categories .dropbtn, #categories .dropdown-content p {
+    cursor: pointer;
+  }
+  #categories .dropbtn {
+    display: flex;
+    align-items: flex-end;
+  }
+  #categories .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  #categories .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fefefe;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+  }
+  #categories .dropdown-content p {
+    color: black;
+    display: block;
+  }
+  #categories .dropdown-content p:hover {
+    background-color: #e94544;
+    color: #fefefe;
+  }
+  #categories .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  #categories button {
+    background-color: #e94544;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  #categories button * {
+    color: #fefefe;
   }
 }
 
