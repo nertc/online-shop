@@ -1,8 +1,9 @@
 export default Object.freeze({
-    adventure: 'adventure',
-    classics: 'classics',
-    comics: 'comics',
-    detective: 'detective',
-    fantasy: 'fantasy',
-    horror: 'horror'
+    nofilter: 'No Filter',
+    adventure: 'Adventure',
+    classics: 'Classics',
+    comics: 'Comics',
+    detective: 'Detective',
+    fantasy: 'Fantasy',
+    horror: 'Horror'
 });

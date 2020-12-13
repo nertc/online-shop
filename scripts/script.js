@@ -2,8 +2,14 @@ import Book from './book.js';
 import Genre from './genre.js';
 
 const BOOKS_ID = 'books';
+const   SEARCH_NAME_ID = 'nameId',
+        SEARCH_AUTHOR_ID = 'authorId',
+        SEARCH_FROM_ID = 'dateFromId',
+        SEARCH_TO_ID = 'dateToId',
+        SEARCH_GENRE_ID = 'genresId';
 
 const books = [];
+let searchObj;
 
 async function start() {
     books.push(
@@ -136,10 +142,51 @@ async function start() {
         )
     );
     await setBooks(books);
+
+    searchObj = {
+        name: document.getElementById(SEARCH_NAME_ID),
+        author: document.getElementById(SEARCH_AUTHOR_ID),
+        from: document.getElementById(SEARCH_FROM_ID),
+        to: document.getElementById(SEARCH_TO_ID),
+        genre: document.getElementById(SEARCH_GENRE_ID)
+    };
+
+    document.getElementById('categories').getElementsByTagName('button')[0]
+    .onclick = search;
+
+    const formNode = document.getElementById('categories').getElementsByClassName('dropdown-content')[0];
+    for( const genre in Genre ) {
+        let node = document.createElement('p');
+        node.innerHTML = Genre[genre];
+        node.onclick = selectGenre;
+        formNode.appendChild(node);
+    }
 }
 
 async function setBooks( books ) {
     document.getElementById(BOOKS_ID).innerHTML = books.reduce((prev, cur) => prev += cur.toHTML(), '');
+}
+
+async function search() {
+    let name = searchObj.name.value || "";
+    let author = searchObj.author.value || "";
+    let from = searchObj.from.value || "NaN";
+    let to = searchObj.to.value || "NaN";
+    let genre = searchObj.genre.innerHTML;
+
+    setBooks(books.filter( book =>
+        book.name.toUpperCase().indexOf(name.toUpperCase()) !== -1 &&
+        book.author.toUpperCase().indexOf(author.toUpperCase()) !== -1 &&
+        ( isNaN(Number(from)) || Number(from) <= book.date ) &&
+        ( isNaN(Number(to)) || Number(to) >= book.date ) &&
+        ( genre === 'Genre' || genre.toUpperCase() === book.genre.toUpperCase())
+    ));
+}
+
+function selectGenre() {
+    let genre = this.innerHTML;
+    if( genre === 'No Filter') genre = 'Genre';
+    document.getElementById(SEARCH_GENRE_ID).innerHTML = genre;
 }
 
 start();

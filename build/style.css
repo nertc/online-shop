@@ -307,6 +307,7 @@ html, body {
     padding: 0 110px;
     align-items: center;
     justify-items: center;
+    min-height: 120px;
   }
   #books .book {
     width: 240px;
