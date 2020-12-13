@@ -343,4 +343,26 @@ html, body {
   }
 }
 
+@media screen and (min-width: 1025px) {
+  footer {
+    background-color: #e94544;
+    padding: 10px 50px;
+    color: #fefefe;
+  }
+  footer p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #595959;
+    color: #fefefe;
+  }
+  footer .fa {
+    font-size: 125%;
+    cursor: pointer;
+    color: #fefefe;
+  }
+  footer .fa:hover {
+    color: black;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
