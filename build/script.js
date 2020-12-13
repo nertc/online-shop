@@ -1,5 +1,37 @@
-import Book from './book.js';
-import Genre from './genre.js';
+class Book {
+    constructor( name, author, date, genre, image, price, links, description = "") {
+        this.name = name;
+        this.author = author;
+        this.date = date;
+        this.genre = genre;
+        this.image = './assets/images/books/' + image;
+        this.price = price;
+        this.links = links;
+        this.description = description;
+    }
+
+    toHTML() {
+        return `
+        <div class="book">
+            <div class="border"></div>
+            <h2>${this.name}</h2>
+            <p class="author">by ${this.author}</p>
+            <img src="${this.image}" alt="${this.name}">
+            <p class="price">$ ${this.price}</p>
+        </div>`;
+    }
+}
+
+const Genre =  Object.freeze({
+    nofilter: 'No Filter',
+    adventure: 'Adventure',
+    classics: 'Classics',
+    comics: 'Comics',
+    detective: 'Detective',
+    fantasy: 'Fantasy',
+    horror: 'Horror'
+});
+
 
 const BOOKS_ID = 'books';
 const   SEARCH_NAME_ID = 'nameId',
@@ -188,5 +220,3 @@ function selectGenre() {
     if( genre === 'No Filter') genre = 'Genre';
     document.getElementById(SEARCH_GENRE_ID).innerHTML = genre;
 }
-
-start();
