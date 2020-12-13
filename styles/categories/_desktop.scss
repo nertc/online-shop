@@ -17,7 +17,8 @@
 input, .dropbtn {
     outline: none;
     vertical-align: bottom;
-    @include font(1em);
+    @include font(100%);
+    color: $font-color-dim;
     box-shadow: inset 0px -3px 8px -10px black;
     background-color: $font-color-light;
     border: none;
