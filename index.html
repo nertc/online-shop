@@ -13,6 +13,9 @@
     <!-- styles -->
     <link rel="stylesheet" href="./build/style.css">
     <link rel="stylesheet" href="./assets/styles/font-awesome.min.css">
+
+    <!-- scripts -->
+    <script type="module" src="./scripts/script.js"></script>
 </head>
 
 <body>
@@ -38,10 +41,10 @@
     </div>
     <div class="component sticky" id="categories">
         <div class="form">
-            <input type="text" name="name" id="nameId">
-            <input type="text" name="author" id="authorId">
-            <input type="text" pattern="\d*" name="datefrom" id="dateFromId">
-            <input type="text" pattern="\d*" name="dateto" id="dateToId">
+            <input type="text" name="name" id="nameId" placeholder="Name">
+            <input type="text" name="author" id="authorId" placeholder="Author">
+            <input type="text" pattern="\d*" name="datefrom" id="dateFromId" placeholder="Publish Date From">
+            <input type="text" pattern="\d*" name="dateto" id="dateToId" placeholder="Publish Date To">
             <div class="dropdown">
                 <div class="dropbtn">Genre</div>
                 <div class="dropdown-content">
@@ -52,16 +55,12 @@
                     <p value="detective">Detective</p>
                     <p value="fantasy">Fantasy</p>
                     <p value="horror">Horror</p>
-                    <p value="romance">Romance</p>
-                    <p value="scifi">Sci-Fi</p>
-                    <p value="short">Short Stories</p>
-                    <p value="thriller">Thriller</p>
                 </div>
             </div>
             <button onclick=""><i class="fa fa-search"></i></button>
         </div>
     </div>
-    <div class="component flex" id="books">
+    <div class="component" id="books">
         <div class="book">
             <div class="border"></div>
             <h2>Book Name</h2>

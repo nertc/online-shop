@@ -1,15 +1,26 @@
 &{
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
     padding: 0 110px;
+    align-items: center;
+    justify-items: center;
 }
 
 .book {
     width: 240px;
     margin-bottom: 50px;
+    
     text-align: center;
     padding-top: 45px;
     cursor: pointer;
+}
+
+h2, .author {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 h2 {
@@ -18,7 +29,6 @@ h2 {
     color: $font-color-dark;
     letter-spacing: 0.05em;
     word-spacing: 0.05em;
-    text-overflow: ellipsis;
     margin-bottom: 11px;
 }
 
@@ -29,6 +39,8 @@ h2 {
 }
 
 img {
+    margin: 0 auto;
+    display: block;
     height: 225px;
     width: 145px;
 

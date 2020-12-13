@@ -302,9 +302,11 @@ html, body {
 
 @media screen and (min-width: 1025px) {
   #books {
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 0 110px;
+    align-items: center;
+    justify-items: center;
   }
   #books .book {
     width: 240px;
@@ -312,6 +314,13 @@ html, body {
     text-align: center;
     padding-top: 45px;
     cursor: pointer;
+  }
+  #books h2, #books .author {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
   #books h2 {
     text-transform: uppercase;
@@ -322,7 +331,6 @@ html, body {
     color: #272727;
     letter-spacing: 0.05em;
     word-spacing: 0.05em;
-    text-overflow: ellipsis;
     margin-bottom: 11px;
   }
   #books .author {
@@ -334,6 +342,8 @@ html, body {
     margin-bottom: 30px;
   }
   #books img {
+    margin: 0 auto;
+    display: block;
     height: 225px;
     width: 145px;
     box-shadow: 0px 7px 15px gray;
