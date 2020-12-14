@@ -47,6 +47,8 @@ h2 {
     @include font(400%, $bold);
     color: $font-color-dark;
     max-height: 130px;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 h3 {

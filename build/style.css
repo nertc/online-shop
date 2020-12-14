@@ -438,6 +438,8 @@ html, body {
     color: #595959;
     color: #272727;
     max-height: 130px;
+    overflow: hidden;
+    text-overflow: clip;
   }
   #info h3 {
     font-family: "Roboto", sans-serif;
