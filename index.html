@@ -27,7 +27,7 @@
                 <li class="selected" id="homebtn"><a href="#home">HOME</a></li>
                 <li id="categoriesbtn"><a href="#categories">SEARCH</a></li>
                 <li id="booksbtn"><a href="#books">CATALOG</a></li>
-                <li id="addbookbtn"><a href="#">ADD BOOK</a></li>
+                <li id="addbookbtn"><a href="#" onclick="showAddBook()">ADD BOOK</a></li>
             </ul>
         </nav>
     </header>
@@ -36,7 +36,7 @@
         <article>
             <h1>Jiji's Book Service</h1>
             <p>ALL OF THE BOOKS YOU WANT</p>
-            <button>REGISTRATION</button>
+            <button onclick="showAddBook()">Add a Book</button>
         </article>
     </div>
     <div class="component sticky" id="categories">
@@ -101,6 +101,26 @@
     </footer>
 
     <div class="component" id="info">
+    </div>
+
+    <div class="component" id="addbook">
+        <div class="flex">
+            <h2>Add a Book</h2>
+            <input type="text" pattern=".+" name="addname" id="addname" placeholder="Name *">
+            <input type="text" pattern=".+" name="addauthor" id="addauthor" placeholder="Author *">
+            <input type="text" pattern="\d+" name="adddate" id="adddate" placeholder="Publish Date (format: 2000) *">
+            <div class="dropdown">
+                <div class="dropbtn" id="addgenresId">Genre</div>
+                <div class="dropdown-content">
+                </div>
+            </div>
+            <input type="url" name="addimg" id="addimg" placeholder="Image Link *">
+            <input type="text" pattern="\d+\.?\d*" name="addprice" id="addprice" placeholder="Price *">
+            <input type="url" name="addlink" id="addlink" placeholder="URL of amazon *">
+            <textarea name="description" id="descriptionid" cols="30" rows="10" placeholder="Description"></textarea>
+            <button onclick="addbook()">Add</button>
+            <button class="close" onclick="closeAddBook()"><i class="fa fa-close"></i></button>
+        </div>
     </div>
 </body>
 

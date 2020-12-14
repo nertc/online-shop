@@ -132,354 +132,452 @@ html, body {
   background: #e94544;
 }
 
-@media screen and (min-width: 1025px) {
-  header {
-    background-color: #fff;
-  }
-  header a {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 95%;
-    color: #595959;
-    letter-spacing: 0.04em;
-  }
-  header nav {
-    width: 100%;
-  }
-  header ul {
-    width: 595px;
-  }
-  header li {
-    padding: 15px 0;
-  }
-  header li.selected {
-    border-top: 3px solid #e94544;
-    -moz-box-shadow: inset 0 8px 5px -10px #000000;
-    -webkit-box-shadow: inset 0 8px 5px -10px #000000;
-    box-shadow: inset 0 8px 5px -10px #000000;
-  }
+header {
+  background-color: #fff;
+}
+header a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 95%;
+  color: #595959;
+  letter-spacing: 0.04em;
+}
+header nav {
+  width: 100%;
+}
+header ul {
+  width: 595px;
+}
+header li {
+  padding: 15px 0;
+}
+header li.selected {
+  border-top: 3px solid #e94544;
+  -moz-box-shadow: inset 0 8px 5px -10px #000000;
+  -webkit-box-shadow: inset 0 8px 5px -10px #000000;
+  box-shadow: inset 0 8px 5px -10px #000000;
 }
 
-@media screen and (min-width: 1025px) {
-  #home {
-    padding: 0 50px;
-  }
-  #home .bg {
-    width: 100%;
-    height: 750px;
-    background-image: linear-gradient(45deg, rgba(233, 69, 68, 0.9), rgba(233, 69, 68, 0.4)), url("../assets/images/home/bg2.jpg");
-    filter: brightness(60%);
-    background-position-y: top;
-    background-size: cover;
-  }
-  #home article {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, calc(-50% - 5px));
-    text-align: center;
-  }
-  #home h1 {
-    font-family: "Myra", sans-serif;
-    font-weight: 700;
-    font-size: 650%;
-    color: #fefefe;
-    letter-spacing: 0.0275em;
-    margin-bottom: 20px;
-  }
-  #home p {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    color: #595959;
-    color: #fefefe;
-    letter-spacing: 0.035em;
-    word-spacing: 0.2em;
-    margin-bottom: 80px;
-  }
-  #home button {
-    width: 200px;
-    height: 45px;
-    background-color: #00f6ff;
-    border-radius: 25px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 95%;
-    color: #595959;
-    padding-bottom: 6px;
-  }
-  #home button:after {
-    content: "";
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    top: -20%;
-    left: -2%;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    border: 3px solid #595959;
-  }
+#home {
+  padding: 0 50px;
+}
+#home .bg {
+  width: 100%;
+  height: 750px;
+  background-image: linear-gradient(45deg, rgba(233, 69, 68, 0.9), rgba(233, 69, 68, 0.4)), url("../assets/images/home/bg2.jpg");
+  filter: brightness(60%);
+  background-position-y: top;
+  background-size: cover;
+}
+#home article {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 5px));
+  text-align: center;
+}
+#home h1 {
+  font-family: "Myra", sans-serif;
+  font-weight: 700;
+  font-size: 650%;
+  color: #fefefe;
+  letter-spacing: 0.0275em;
+  margin-bottom: 20px;
+}
+#home p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #595959;
+  color: #fefefe;
+  letter-spacing: 0.035em;
+  word-spacing: 0.2em;
+  margin-bottom: 80px;
+}
+#home button {
+  width: 200px;
+  height: 45px;
+  background-color: #00f6ff;
+  border-radius: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 95%;
+  color: #595959;
+  padding-bottom: 6px;
+}
+#home button:after {
+  content: "";
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: -20%;
+  left: -2%;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  border: 3px solid #595959;
 }
 
-@media screen and (min-width: 1025px) {
-  #categories {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr minmax(1000px, 1600px) 1fr;
-    background-color: #fff;
-    top: 49px;
-  }
-  #categories .form {
-    padding: 20px 0px;
-    grid-column: 2/3;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  #categories input, #categories .dropbtn {
-    outline: none;
-    vertical-align: bottom;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 100%;
-    color: #595959;
-    color: #595959;
-    box-shadow: inset 0px -3px 8px -10px black;
-    background-color: #fefefe;
-    border: none;
-    border-bottom: solid 3px #e94544;
-    height: 30px;
-  }
-  #categories input, #categories .dropbtn, #categories .dropdown-content p {
-    padding: 5px;
-  }
-  #categories input, #categories .dropdown {
-    width: 15%;
-  }
-  #categories .dropdown * {
-    width: 100%;
-  }
-  #categories .dropbtn, #categories .dropdown-content p {
-    cursor: pointer;
-  }
-  #categories .dropbtn {
-    display: flex;
-    align-items: flex-end;
-  }
-  #categories .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  #categories .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fefefe;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 3;
-  }
-  #categories .dropdown-content p {
-    color: black;
-    display: block;
-  }
-  #categories .dropdown-content p:hover {
-    background-color: #e94544;
-    color: #fefefe;
-  }
-  #categories .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  #categories button {
-    background-color: #e94544;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-  #categories button * {
-    color: #fefefe;
-  }
+#categories {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr minmax(1000px, 1600px) 1fr;
+  background-color: #fff;
+  top: 49px;
+}
+#categories .form {
+  padding: 20px 0px;
+  grid-column: 2/3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#categories input, #categories .dropbtn {
+  outline: none;
+  vertical-align: bottom;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  color: #595959;
+  color: #595959;
+  box-shadow: inset 0px -3px 8px -10px black;
+  background-color: #fefefe;
+  border: none;
+  border-bottom: solid 3px #e94544;
+  height: 30px;
+}
+#categories input, #categories .dropbtn, #categories .dropdown-content p {
+  padding: 5px;
+}
+#categories input, #categories .dropdown {
+  width: 15%;
+}
+#categories .dropdown * {
+  width: 100%;
+}
+#categories .dropbtn, #categories .dropdown-content p {
+  cursor: pointer;
+}
+#categories .dropbtn {
+  display: flex;
+  align-items: flex-end;
+}
+#categories .dropdown {
+  position: relative;
+  display: inline-block;
+}
+#categories .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fefefe;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+#categories .dropdown-content p {
+  color: black;
+  display: block;
+}
+#categories .dropdown-content p:hover {
+  background-color: #e94544;
+  color: #fefefe;
+}
+#categories .dropdown:hover .dropdown-content {
+  display: block;
+}
+#categories button {
+  background-color: #e94544;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+#categories button * {
+  color: #fefefe;
 }
 
-@media screen and (min-width: 1025px) {
-  #books {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 0 110px;
-    align-items: center;
-    justify-items: center;
-    min-height: 120px;
-  }
-  #books .book {
-    width: 240px;
-    margin-bottom: 50px;
-    text-align: center;
-    padding-top: 45px;
-    cursor: pointer;
-  }
-  #books h2, #books .author {
-    padding-left: 30px;
-    padding-right: 30px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  #books h2 {
-    text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 100%;
-    color: #595959;
-    color: #272727;
-    letter-spacing: 0.05em;
-    word-spacing: 0.05em;
-    margin-bottom: 11px;
-  }
-  #books .author {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 90%;
-    color: #595959;
-    color: #595959;
-    margin-bottom: 30px;
-  }
-  #books img {
-    margin: 0 auto;
-    display: block;
-    height: 225px;
-    width: 145px;
-    box-shadow: 0px 7px 15px gray;
-    margin-bottom: 30px;
-    background-image: url("../assets/images/books/placeholder.png");
-    background-position: center center;
-    background-size: cover;
-  }
-  #books .price {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 125%;
-    color: #595959;
-  }
-  #books .border {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 75%;
-    border: 15px solid #e94544;
-  }
+#books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0 110px;
+  align-items: center;
+  justify-items: center;
+  min-height: 120px;
+}
+#books .book {
+  width: 240px;
+  margin-bottom: 50px;
+  text-align: center;
+  padding-top: 45px;
+  cursor: pointer;
+}
+#books h2, #books .author {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#books h2 {
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 100%;
+  color: #595959;
+  color: #272727;
+  letter-spacing: 0.05em;
+  word-spacing: 0.05em;
+  margin-bottom: 11px;
+}
+#books .author {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 90%;
+  color: #595959;
+  color: #595959;
+  margin-bottom: 30px;
+}
+#books img {
+  margin: 0 auto;
+  display: block;
+  height: 225px;
+  width: 145px;
+  box-shadow: 0px 7px 15px gray;
+  margin-bottom: 30px;
+  background-image: url("../assets/images/books/placeholder.png");
+  background-position: center center;
+  background-size: cover;
+}
+#books .price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 125%;
+  color: #595959;
+}
+#books .border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75%;
+  border: 15px solid #e94544;
 }
 
-@media screen and (min-width: 1025px) {
-  footer {
-    background-color: #e94544;
-    padding: 10px 50px;
-    color: #fefefe;
-  }
-  footer p {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    color: #595959;
-    color: #fefefe;
-  }
-  footer .fa {
-    font-size: 125%;
-    cursor: pointer;
-    color: #fefefe;
-  }
-  footer .fa:hover {
-    color: black;
-  }
+footer {
+  background-color: #e94544;
+  padding: 10px 50px;
+  color: #fefefe;
+}
+footer p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #595959;
+  color: #fefefe;
+}
+footer .fa {
+  font-size: 125%;
+  cursor: pointer;
+  color: #fefefe;
+}
+footer .fa:hover {
+  color: black;
 }
 
-@media screen and (min-width: 1025px) {
-  #info {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    padding: 49px 6.5%;
-    background-color: rgba(0, 0, 0, 0.75);
-  }
-  #info article {
-    width: 100%;
-    height: 100%;
-    background-color: #fefefe;
-    border: 15px solid #e94544;
-    padding: 83px 5%;
-    justify-content: flex-start;
-  }
-  #info img {
-    height: 100%;
-    background-image: url("../assets/images/books/placeholder.png");
-    background-position: center center;
-    background-size: cover;
-  }
-  #info .close {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    background: none;
-  }
-  #info .close .fa-close {
-    color: #e94544;
-    font-size: 150%;
-  }
-  #info div {
-    height: 100%;
-    padding: 0 50px;
-  }
-  #info h2 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 400%;
-    color: #595959;
-    color: #272727;
-    max-height: 130px;
-    overflow: hidden;
-    text-overflow: clip;
-  }
-  #info h3 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-size: 200%;
-    color: #595959;
-    color: #595959;
-  }
-  #info .publish, #info h2 {
-    margin-bottom: 10px;
-  }
-  #info h3, #info .genre, #info .description {
-    margin-bottom: 30px;
-  }
-  #info .publish, #info .genre {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 150%;
-    color: #595959;
-    color: #595959;
-  }
-  #info .description {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    color: #595959;
-    color: #595959;
-    max-height: calc(80% - 250px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  #info a {
-    display: inline-block;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 150%;
-    color: #595959;
-    background-color: #e94544;
-    color: #fefefe;
-    padding: 5px 10px;
-  }
+#info {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 49px 6.5%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#info article {
+  width: 100%;
+  height: 100%;
+  background-color: #fefefe;
+  border: 15px solid #e94544;
+  padding: 83px 5%;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+#info img {
+  height: 100%;
+  background-image: url("../assets/images/books/placeholder.png");
+  background-position: center center;
+  background-size: cover;
+}
+#info .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+}
+#info .close .fa-close {
+  color: #e94544;
+  font-size: 150%;
+}
+#info div {
+  height: 100%;
+  padding: 0 50px;
+}
+#info h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 400%;
+  color: #595959;
+  color: #272727;
+  max-height: 130px;
+  overflow: hidden;
+  text-overflow: clip;
+}
+#info h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 200%;
+  color: #595959;
+  color: #595959;
+}
+#info .publish, #info h2 {
+  margin-bottom: 10px;
+}
+#info h3, #info .genre, #info .description {
+  margin-bottom: 30px;
+}
+#info .publish, #info .genre {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 150%;
+  color: #595959;
+  color: #595959;
+}
+#info .description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #595959;
+  color: #595959;
+  max-height: calc(80% - 250px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#info a {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 150%;
+  color: #595959;
+  background-color: #e94544;
+  color: #fefefe;
+  padding: 5px 10px;
+}
+
+#addbook {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 49px 6.5%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#addbook > div {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  background-color: #fefefe;
+  border: 15px solid #e94544;
+  padding: 50px 5%;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-y: scroll;
+  justify-items: center;
+  align-items: center;
+}
+#addbook > div > * {
+  display: block;
+}
+#addbook h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 200%;
+  color: #595959;
+  color: #e94544;
+}
+#addbook button {
+  background-color: #e94544;
+  color: #fefefe;
+  padding: 10px 15%;
+}
+#addbook textarea {
+  border: 3px solid #e94544;
+  outline: none;
+}
+#addbook input, #addbook .dropbtn {
+  outline: none;
+  vertical-align: bottom;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  color: #595959;
+  color: #595959;
+  box-shadow: inset 0px -3px 8px -10px black;
+  background-color: #fefefe;
+  border: none;
+  border-bottom: solid 3px #e94544;
+  height: 30px;
+}
+#addbook .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  padding: 0;
+}
+#addbook .close .fa-close {
+  color: #e94544;
+  font-size: 150%;
+}
+#addbook input, #addbook .dropbtn, #addbook .dropdown-content p {
+  padding: 5px;
+}
+#addbook input, #addbook .dropdown, #addbook textarea {
+  width: 50%;
+}
+#addbook .dropdown * {
+  width: 100%;
+}
+#addbook .dropbtn, #addbook .dropdown-content p {
+  cursor: pointer;
+}
+#addbook .dropbtn {
+  display: flex;
+  align-items: flex-end;
+}
+#addbook .dropdown {
+  position: relative;
+  display: inline-block;
+}
+#addbook .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fefefe;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+#addbook .dropdown-content p {
+  color: black;
+  display: block;
+}
+#addbook .dropdown-content p:hover {
+  background-color: #e94544;
+  color: #fefefe;
+}
+#addbook .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

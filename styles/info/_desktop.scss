@@ -17,6 +17,7 @@ article {
     border: 15px solid $primary-color;
     padding: 83px 5%;
     justify-content: flex-start;
+    overflow-y: scroll;
 }
 
 img {

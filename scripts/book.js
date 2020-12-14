@@ -4,7 +4,8 @@ class Book {
         this.author = author;
         this.date = date;
         this.genre = genre;
-        this.image = './assets/images/books/' + image;
+        if(image.substr(0, 4) === "http" || image.substr(0,3) === "www") this.image = image;
+        else this.image = './assets/images/books/' + image;
         this.price = price;
         this.links = links;
         this.description = description;

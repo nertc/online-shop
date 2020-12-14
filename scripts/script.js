@@ -151,12 +151,14 @@ async function start() {
     document.getElementById('categories').getElementsByTagName('button')[0]
     .onclick = search;
 
-    const formNode = document.getElementById('categories').getElementsByClassName('dropdown-content')[0];
-    for( const genre in Genre ) {
-        let node = document.createElement('p');
-        node.innerHTML = Genre[genre];
-        node.onclick = selectGenre;
-        formNode.appendChild(node);
+    const formNode = document.getElementsByClassName('dropdown-content');
+    for( const form of formNode) {
+        for( const genre in Genre ) {
+            let node = document.createElement('p');
+            node.innerHTML = Genre[genre];
+            node.onclick = selectGenre;
+            form.appendChild(node);
+        }
     }
 
     scrolling();
@@ -187,12 +189,11 @@ async function search() {
 function selectGenre() {
     let genre = this.innerHTML;
     if( genre === 'No Filter') genre = 'Genre';
-    document.getElementById(SEARCH_GENRE_ID).innerHTML = genre;
+    this.parentElement.previousElementSibling.innerHTML = genre;
 }
 
 function scrolling() {
     function selectMenu( item ) {
-        console.log(item);
         if( selected === item ) return;
         menu[selected].classList.remove('selected');
         selected = item;
@@ -209,7 +210,6 @@ function scrolling() {
         let height = document.getElementsByTagName('header')[0].offsetHeight;
 
         height += document.getElementById('home').offsetHeight;
-        console.log(window.scrollY, height);
         if( window.scrollY < height ) {
             selectMenu(0);
             return;
@@ -223,4 +223,90 @@ function scrolling() {
 
         selectMenu(2);
     };
+}
+
+function addbook() {
+    let mustreturn = false;
+    const form = document.getElementById('addbook');
+    let name, author, date, genre, image, price, link, description;
+    const inputs = form.getElementsByTagName('input');
+    [...inputs].forEach(input => {
+        if(mustreturn) return;
+        switch(input.name) {
+            case 'addname':
+                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                    alert('Name must contain at least one symbol');
+                    mustreturn = true;
+                    return;
+                }
+                name = input.value;
+                break;
+            case 'addauthor':
+                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                    alert('Author must contain at least one symbol');
+                    mustreturn = true;
+                    return;
+                }
+                author = input.value;
+                break;
+            case 'adddate':
+                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                    alert('Date must contain only digits');
+                    mustreturn = true;
+                    return;
+                }
+                date = Number(input.value);
+                break;
+            case 'addprice':
+                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                    alert('Price must contain only floating or decimal number');
+                    mustreturn = true;
+                    return;
+                }
+                price = Number(input.value);
+                break;
+            case 'addimg':
+            case 'addlink':
+                if( !input.value || input.value.match(new RegExp('^(https?:\\/\\/)?'+ // protocol
+                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+                '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+                '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+                '(\\#[-a-z\\d_]*)?$', 'g')).length !== 1 ) {
+                    alert('Image and buy links must be valid links');
+                    mustreturn = true;
+                    return;
+                }
+                (input.name === 'addimg' ? image = input.value : link = input.value) ;
+                break;
+        }
+    });
+    if(mustreturn) return;
+    genre = document.getElementById('addgenresId').innerHTML;
+    if( genre === "Genre" ) {
+        alert('Genre must be chosen');
+        return;
+    }
+    description = form.getElementsByTagName('textarea')[0].value;
+    let args = [name, author, date, genre, image, price, [link]];
+    if(description) args.push(description);
+    books.push(new Book( ...args ));
+    setBooks(books);
+    alert("Book has been added");
+    closeAddBook();
+
+    // Clear
+    [...inputs].forEach( input => input.value = "");
+    document.getElementById('addgenresId').innerText = "Genre";
+    form.getElementsByTagName('textarea')[0].value = "";
+}
+
+function closeAddBook() {
+    const form = document.getElementById('addbook');
+    form.style.display = 'none';
+}
+
+function showAddBook() {
+    const form = document.getElementById('addbook');
+    form.style.display = 'block';
 }
