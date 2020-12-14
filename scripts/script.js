@@ -1,38 +1,3 @@
-class Book {
-    constructor( name, author, date, genre, image, price, links, description = "") {
-        this.name = name;
-        this.author = author;
-        this.date = date;
-        this.genre = genre;
-        this.image = './assets/images/books/' + image;
-        this.price = price;
-        this.links = links;
-        this.description = description;
-    }
-
-    toHTML() {
-        return `
-        <div class="book">
-            <div class="border"></div>
-            <h2>${this.name}</h2>
-            <p class="author">by ${this.author}</p>
-            <img src="${this.image}" alt="${this.name}">
-            <p class="price">$ ${this.price}</p>
-        </div>`;
-    }
-}
-
-const Genre =  Object.freeze({
-    nofilter: 'No Filter',
-    adventure: 'Adventure',
-    classics: 'Classics',
-    comics: 'Comics',
-    detective: 'Detective',
-    fantasy: 'Fantasy',
-    horror: 'Horror'
-});
-
-
 const BOOKS_ID = 'books';
 const   SEARCH_NAME_ID = 'nameId',
         SEARCH_AUTHOR_ID = 'authorId',
@@ -193,6 +158,8 @@ async function start() {
         node.onclick = selectGenre;
         formNode.appendChild(node);
     }
+
+    scrolling();
 }
 
 async function setBooks( books ) {
@@ -219,4 +186,39 @@ function selectGenre() {
     let genre = this.innerHTML;
     if( genre === 'No Filter') genre = 'Genre';
     document.getElementById(SEARCH_GENRE_ID).innerHTML = genre;
+}
+
+function scrolling() {
+    function selectMenu( item ) {
+        console.log(item);
+        if( selected === item ) return;
+        menu[selected].classList.remove('selected');
+        selected = item;
+        menu[selected].classList.add('selected');
+    }
+    const menu = [
+        document.getElementById('homebtn'),
+        document.getElementById('categoriesbtn'),
+        document.getElementById('booksbtn'),
+        document.getElementById('addbookbtn')
+    ];
+    let selected = 0;
+    document.onscroll = function() {
+        let height = document.getElementsByTagName('header')[0].offsetHeight;
+
+        height += document.getElementById('home').offsetHeight;
+        console.log(window.scrollY, height);
+        if( window.scrollY < height ) {
+            selectMenu(0);
+            return;
+        }
+
+        height += document.getElementById('categories').offsetHeight;
+        if( window.scrollY < height ) {
+            selectMenu(1);
+            return;
+        }
+
+        selectMenu(2);
+    };
 }

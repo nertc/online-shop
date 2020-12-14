@@ -1,4 +1,4 @@
-export default Object.freeze({
+const Genre = Object.freeze({
     nofilter: 'No Filter',
     adventure: 'Adventure',
     classics: 'Classics',

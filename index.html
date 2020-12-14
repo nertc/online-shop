@@ -15,19 +15,19 @@
     <link rel="stylesheet" href="./assets/styles/font-awesome.min.css">
 
     <!-- scripts -->
-    <script src="./build/script.js"></script>
+    <script src="./scripts/genre.js"></script>
+    <script src="./scripts/book.js"></script>
+    <script src="./scripts/script.js"></script>
 </head>
 
 <body onload="start()">
     <header class="sticky">
         <nav>
             <ul class="flex center-self">
-                <li class="selected"><a href="#home">HOME</a></li>
-                <li><a href="#catalog">CATALOG</a></li>
-                <li><a href="#personal">PERSONAL</a></li>
-                <li><a href="#new">NEW</a></li>
-                <li><a href="#registration">REGISTRATION</a></li>
-                <li><a href="#">ADD BOOK</a></li>
+                <li class="selected" id="homebtn"><a href="#home">HOME</a></li>
+                <li id="categoriesbtn"><a href="#categories">SEARCH</a></li>
+                <li id="booksbtn"><a href="#books">CATALOG</a></li>
+                <li id="addbookbtn"><a href="#">ADD BOOK</a></li>
             </ul>
         </nav>
     </header>
