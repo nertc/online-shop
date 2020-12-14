@@ -46,6 +46,7 @@ div {
 h2 {
     @include font(400%, $bold);
     color: $font-color-dark;
+    max-height: 130px;
 }
 
 h3 {

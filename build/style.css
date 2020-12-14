@@ -437,6 +437,7 @@ html, body {
     font-size: 400%;
     color: #595959;
     color: #272727;
+    max-height: 130px;
   }
   #info h3 {
     font-family: "Roboto", sans-serif;
