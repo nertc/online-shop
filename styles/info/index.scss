@@ -1,0 +1,5 @@
+#info{
+    @include media-desktop {
+        @import './desktop';
+    }
+}

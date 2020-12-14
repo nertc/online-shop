@@ -1,0 +1,83 @@
+&{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 49px 6.5%;
+    background-color: rgba(0,0,0,0.75);
+}
+
+article {
+    width: 100%;
+    height: 100%;
+    background-color: $font-color-light;
+    border: 15px solid $primary-color;
+    padding: 83px 5%;
+    justify-content: flex-start;
+}
+
+img {
+    height: 100%;
+    background-image: url("../assets/images/books/placeholder.png");
+    background-position: center center;
+    background-size: cover;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    
+    .fa-close {
+        color: $primary-color;
+        font-size: 150%;
+    }
+}
+
+div {
+    height: 100%;
+    padding: 0 50px;
+}
+
+h2 {
+    @include font(400%, $bold);
+    color: $font-color-dark;
+}
+
+h3 {
+    @include font(200%, $light);
+    color: $font-color-dim;
+}
+
+.publish, h2 {
+    margin-bottom: 10px;
+}
+
+h3, .genre, .description {
+    margin-bottom: 30px;
+}
+
+.publish, .genre {
+    @include font(150%);
+    color: $font-color-dim;
+}
+
+.description {
+    @include font();
+    color: $font-color-dim;
+    max-height: calc(80% - 250px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a {
+    display: inline-block;
+    @include font(150%);
+    background-color: $primary-color;
+    color: $font-color-light;
+    padding: 5px 10px;
+}

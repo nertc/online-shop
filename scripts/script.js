@@ -163,7 +163,9 @@ async function start() {
 }
 
 async function setBooks( books ) {
-    document.getElementById(BOOKS_ID).innerHTML = books.reduce((prev, cur) => prev += cur.toHTML(), '');
+    const shelf = document.getElementById(BOOKS_ID);
+    shelf.innerHTML = "";
+    books.forEach(book => shelf.appendChild(book.toHTML()));
 }
 
 async function search() {
