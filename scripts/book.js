@@ -4,9 +4,13 @@ class Book {
         this.author = author;
         this.date = date;
         this.genre = genre;
-        if(image.substr(0, 4) === "http" || image.substr(0,3) === "www") this.image = image;
+        if(image.substr(0, 4) === "www.") image = "https://" + image;
+        if(image.substr(0, 4) === "http") this.image = image;
         else this.image = './assets/images/books/' + image;
         this.price = price;
+        links.forEach((link, i) => {
+            if( link.substr(0, 4) === "www.") links[i] = "https://" + link;
+        });
         this.links = links;
         this.description = description;
     }
