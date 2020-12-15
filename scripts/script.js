@@ -236,7 +236,7 @@ function addbook() {
         switch(input.name) {
             case 'addname':
                 reg = input.value.match(new RegExp(input.pattern, 'g'));
-                if( !input.value || !reg || reg.length !== 1 ) {
+                if( !input.value || !reg || reg[0] !== input.value ) {
                     alert('Name must contain at least one symbol');
                     mustreturn = true;
                     return;
@@ -245,7 +245,7 @@ function addbook() {
                 break;
             case 'addauthor':
                 reg = input.value.match(new RegExp(input.pattern, 'g'));
-                if( !input.value || !reg || reg.length !== 1 ) {
+                if( !input.value || !reg || reg[0] !== input.value ) {
                     alert('Author must contain at least one symbol');
                     mustreturn = true;
                     return;
@@ -254,7 +254,7 @@ function addbook() {
                 break;
             case 'adddate':
                 reg = input.value.match(new RegExp(input.pattern, 'g'));
-                if( !input.value || !reg || reg.length !== 1 ) {
+                if( !input.value || !reg || reg[0] !== input.value ) {
                     alert('Date must contain only digits');
                     mustreturn = true;
                     return;
@@ -263,7 +263,7 @@ function addbook() {
                 break;
             case 'addprice':
                 reg = input.value.match(new RegExp(input.pattern, 'g'));
-                if( !input.value || !reg || reg.length !== 1 ) {
+                if( !input.value || !reg || reg[0] !== input.value ) {
                     alert('Price must contain only floating or decimal number');
                     mustreturn = true;
                     return;
@@ -278,7 +278,7 @@ function addbook() {
                 '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
                 '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
                 '(\\#[-a-z\\d_]*)?$', 'g'));
-                if( !input.value || !reg || reg.length !== 1 ) {
+                if( !input.value || !reg || reg[0] !== input.value ) {
                     alert('Image and buy links must be valid links');
                     mustreturn = true;
                     return;
