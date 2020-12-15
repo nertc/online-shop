@@ -232,9 +232,11 @@ function addbook() {
     const inputs = form.getElementsByTagName('input');
     [...inputs].forEach(input => {
         if(mustreturn) return;
+        let reg;
         switch(input.name) {
             case 'addname':
-                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                reg = input.value.match(new RegExp(input.pattern, 'g'));
+                if( !input.value || !reg || reg.length !== 1 ) {
                     alert('Name must contain at least one symbol');
                     mustreturn = true;
                     return;
@@ -242,7 +244,8 @@ function addbook() {
                 name = input.value;
                 break;
             case 'addauthor':
-                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                reg = input.value.match(new RegExp(input.pattern, 'g'));
+                if( !input.value || !reg || reg.length !== 1 ) {
                     alert('Author must contain at least one symbol');
                     mustreturn = true;
                     return;
@@ -250,7 +253,8 @@ function addbook() {
                 author = input.value;
                 break;
             case 'adddate':
-                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                reg = input.value.match(new RegExp(input.pattern, 'g'));
+                if( !input.value || !reg || reg.length !== 1 ) {
                     alert('Date must contain only digits');
                     mustreturn = true;
                     return;
@@ -258,7 +262,8 @@ function addbook() {
                 date = Number(input.value);
                 break;
             case 'addprice':
-                if( !input.value || input.value.match(new RegExp(input.pattern, 'g')).length !== 1 ) {
+                reg = input.value.match(new RegExp(input.pattern, 'g'));
+                if( !input.value || !reg || reg.length !== 1 ) {
                     alert('Price must contain only floating or decimal number');
                     mustreturn = true;
                     return;
@@ -267,12 +272,13 @@ function addbook() {
                 break;
             case 'addimg':
             case 'addlink':
-                if( !input.value || input.value.match(new RegExp('^(https?:\\/\\/)?'+ // protocol
+                reg = input.value.match(new RegExp('^((https?:\/\/)|(www\.))'+ // protocol
                 '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
                 '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
                 '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
                 '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-                '(\\#[-a-z\\d_]*)?$', 'g')).length !== 1 ) {
+                '(\\#[-a-z\\d_]*)?$', 'g'));
+                if( !input.value || !reg || reg.length !== 1 ) {
                     alert('Image and buy links must be valid links');
                     mustreturn = true;
                     return;
